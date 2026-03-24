@@ -23,7 +23,7 @@ int main()
   const double PERC99 = 0.4;
   const double PERC100 = 0.5;
   const double Price = 99.00;
-  double totalCost, originalAmount, discountAmount, dRate;
+  double totalCost, originalAmount, discountAmount;
   int numberofSold;
 
   cout << "Enter the number of units sold\n";
