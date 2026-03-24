@@ -37,7 +37,10 @@ int main()
   originalAmount = Price * numberofSold;
 
   // Determine discount rate — check LARGEST range first
-  if (numberofSold >= 100) {
+  if (numberofSold < 0) {
+    cout << "Error: number of units must be positive." << endl;
+    return 1;
+  } else if (numberofSold >= 100) {
     discountAmount = originalAmount * PERC100;
   } else if (numberofSold >= 50) {
     discountAmount = originalAmount * PERC99;
@@ -49,6 +52,7 @@ int main()
     discountAmount = 0;
   }
   // TODO
+  totalCost = originalAmount - discountAmount;
 
   // Calculate original amount, discount, and total
   // TODO
