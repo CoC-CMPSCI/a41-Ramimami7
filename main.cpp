@@ -27,12 +27,30 @@ int main()
   int numberofSold;
 
   cout << "Enter the number of units sold\n";
+  cin >> numberofSold;
+
   // TODO
 
   // Input Validation
   // TODO
-
+  originalAmount = Price * numberofSold;
   // Determine discount rate based on quantity
+  if (numberofSold < 10) {
+    discountAmount = 0;
+    totalCost = originalAmount * numberofSold;
+  } else if (numberofSold >= 10) {
+    discountAmount = originalAmount * PERC19;
+    totalCost = discountAmount * numberofSold;
+  } else if (numberofSold >= 20) {
+    discountAmount = originalAmount * PERC49;
+    totalCost = discountAmount * numberofSold;
+  } else if (numberofSold >= 50) {
+    discountAmount = originalAmount * PERC99;
+    totalCost = discountAmount * numberofSold;
+  } else if (numberofSold > 100) {
+    discountAmount = originalAmount * PERC100;
+    totalCost = discountAmount * numberofSold;
+  }
   // TODO
 
   // Calculate original amount, discount, and total
