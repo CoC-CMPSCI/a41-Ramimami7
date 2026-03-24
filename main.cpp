@@ -33,23 +33,20 @@ int main()
 
   // Input Validation
   // TODO
+
   originalAmount = Price * numberofSold;
-  // Determine discount rate based on quantity
-  if (numberofSold < 10) {
-    discountAmount = 0;
-    totalCost = originalAmount * numberofSold;
-  } else if (numberofSold >= 10) {
-    discountAmount = originalAmount * PERC19;
-    totalCost = discountAmount * numberofSold;
-  } else if (numberofSold >= 20) {
-    discountAmount = originalAmount * PERC49;
-    totalCost = discountAmount * numberofSold;
+
+  // Determine discount rate — check LARGEST range first
+  if (numberofSold >= 100) {
+    discountAmount = originalAmount * PERC100;
   } else if (numberofSold >= 50) {
     discountAmount = originalAmount * PERC99;
-    totalCost = discountAmount * numberofSold;
-  } else if (numberofSold > 100) {
-    discountAmount = originalAmount * PERC100;
-    totalCost = discountAmount * numberofSold;
+  } else if (numberofSold >= 20) {
+    discountAmount = originalAmount * PERC49;
+  } else if (numberofSold >= 10) {
+    discountAmount = originalAmount * PERC19;
+  } else {
+    discountAmount = 0;
   }
   // TODO
 
