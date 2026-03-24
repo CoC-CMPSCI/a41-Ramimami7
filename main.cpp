@@ -54,7 +54,8 @@ int main()
     dRate = 0;
   }
   // TODO
-  totalCost = originalAmount * dRate;
+  discountAmount = originalAmount * dRate;
+  totalCost = originalAmount - discountAmount;
 
   // Calculate original amount, discount, and total
   // TODO
